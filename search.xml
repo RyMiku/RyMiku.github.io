@@ -17,13 +17,100 @@
     
     
     <entry>
-      <title>第一篇文章</title>
+      <title>Python</title>
       <link href="/2025/04/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2025/04/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章：你好！RyMiku"><a href="#这是我的第一篇文章：你好！RyMiku" class="headerlink" title="这是我的第一篇文章：你好！RyMiku"></a>这是我的第一篇文章：你好！RyMiku</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章："><a href="#这是我的第一篇文章：" class="headerlink" title="这是我的第一篇文章："></a>这是我的第一篇文章：</h2>]]></content>
       
       
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础语言学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GIT使用</title>
+      <link href="/2025/04/07/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2025/04/07/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是我的第三篇文章："><a href="#这是我的第三篇文章：" class="headerlink" title="这是我的第三篇文章："></a>这是我的第三篇文章：</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Mysql</title>
+      <link href="/2025/04/07/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2025/04/07/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是我的第二篇文章："><a href="#这是我的第二篇文章：" class="headerlink" title="这是我的第二篇文章："></a>这是我的第二篇文章：</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库操作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Machine Learning</title>
+      <link href="/2025/04/07/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2025/04/07/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是我的第四篇文章："><a href="#这是我的第四篇文章：" class="headerlink" title="这是我的第四篇文章："></a>这是我的第四篇文章：</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+        </tags>
       
     </entry>
     
