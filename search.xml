@@ -18,10 +18,10 @@
     
     <entry>
       <title>GIT使用</title>
-      <link href="/2025/04/07/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2025/04/07/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <link href="/2025/04/07/GIT%E4%BD%BF%E7%94%A8/"/>
+      <url>/2025/04/07/GIT%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第三篇文章："><a href="#这是我的第三篇文章：" class="headerlink" title="这是我的第三篇文章："></a>这是我的第三篇文章：</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><ul><li>概念：分布式版本管理系统，记录每次修改，可回滚版本，避免混乱</li><li>工作方式：git与github联立可实现多个开发者同时开发，也可在本地开发完成一部分，在push至github仓库中</li><li>工作原理：工作区、暂存区、仓库，三者之间提交与回退工作区 (修改文件)<br>→ git add → 暂存区<br>→ git commit → 本地仓库<br>→ git push → 远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 工作区添加至暂存区</span></span><br><span class="line">- git add 修改文件</span><br><span class="line"><span class="comment"># 将暂存区提交至仓库</span></span><br><span class="line">- git commit -m 本次修改说明</span><br><span class="line"><span class="comment"># 推送当前分支到远程仓库（首次推送需指定远程分支）</span></span><br><span class="line">git push origin main</span><br><span class="line"><span class="comment"># 简化后续推送（设置 upstream 关联分支）</span></span><br><span class="line">git push -u origin dev</span><br><span class="line"><span class="comment"># 克隆远程仓库</span></span><br><span class="line">- git <span class="built_in">clone</span> -b dev https://github.com/user/repo.git：</span><br><span class="line"><span class="comment"># 从远程仓库拉去代码并合并/只拉取代码不合并</span></span><br><span class="line">- git pull/fetch：</span><br><span class="line"><span class="comment"># 查看仓库状态(会给出分支位置、未追踪文件、提交状态等)</span></span><br><span class="line">- git status：</span><br><span class="line"><span class="comment"># 切换到一个新分支(不带-c则只能切换至已有分支)</span></span><br><span class="line">- git switch -c k:</span><br><span class="line"><span class="comment"># 显示本地所有分支</span></span><br><span class="line">- git branch：</span><br><span class="line"><span class="comment"># 显示本地和github所有分支</span></span><br><span class="line">- git branch - a：</span><br><span class="line"><span class="comment"># 撤销修改未add的文件修改</span></span><br><span class="line">- git restore：</span><br><span class="line"><span class="comment"># 撤销修改已add的文件修改</span></span><br><span class="line">- git restore --staged：</span><br><span class="line"><span class="comment"># 查看commit的提交记录</span></span><br><span class="line">- git <span class="built_in">log</span>：</span><br><span class="line"><span class="comment"># 回退commit</span></span><br><span class="line">- git reset --hard  <span class="built_in">log</span>中commit的<span class="built_in">id</span>：</span><br><span class="line"><span class="comment"># 挑选自己想要的commit提交至github</span></span><br><span class="line">- git cherry-pick <span class="built_in">log</span>中commit的<span class="built_in">id</span>：</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并分支，先从修改分支切换至目标分支再执行以下：</span></span><br><span class="line">- git merge --no-ff -m <span class="string">&#x27;提交说明&#x27;</span> 修改分支</span><br><span class="line">- git push -u origin dev：向github提交</span><br><span class="line"><span class="comment"># 文件的四种工作状态：untracked(新建)、modify(已修改)、staged(暂存状态)、commited(已提交状态)</span></span><br></pre></td></tr></table></figure>开发流程：</li><li>master-&gt;dev-&gt;个人分支</li><li>作用：分支用于隔离各个分支，进行独立开发</li><li>流程：首先个人在自己的分支上开发并测试，测试完成后将代码合并至dev分支，在push到github的dev分支，在测试环境中测试后。完成后通过提交PR请求，请求将dev合并至master分支，管理员review代码，即可在master分支进行线上代码发布</li><li>feature分支：根据需要开发的功能进行命名的分支</li><li>hotfix分支：修复bug时用的分支</li><li>release分支：预发布分支<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将代码下载至本地</span></span><br><span class="line">- git <span class="built_in">clone</span> 项目ssh网址</span><br></pre></td></tr></table></figure></li><li>代码冲突：<br>多人开发中，难免会出现公共服务模块代码冲突，可以选择merge 和rebase<br>将远程分支下载至本地，并提交(保证更完整的提交记录)<br>rebase将本地提交移至远程提交后面(保持提交记录的线性)</li><li>BUG修复：</li><li>git stash：把当前开发内容暂存起来</li><li>新建分支，修复bug，再切换该开发分支</li><li>git stash pop：恢复开发进度</li></ul><h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><ul><li>概念：代码托管平台，开源平台</li><li>描述：主页，开源项目，仓库，托管，问题提交，代码拉取请求</li><li>创建仓库流程：命名、是否公开、添加read_me、添加gitinore、添加开源协议<br>gitinore中添加想要忽略的文件类型</li><li>开源项目开发：<br>先fork至自己代码仓库，Sync fork更新同步至自己仓库，在修改提交至自己仓库后，可以通过提交PR(拉取请求)，作者review通过后即可实现项目内容修改</li><li><p>项目搜索：搜索栏：in 目标内容 in 目标位置(description,readme): stars:&gt;目标数 pushed&gt;年-月-日 fork:&gt;目标数 language:目标语言</p></li><li><p>如何联立二者：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name github用户名</span><br><span class="line">git config --global user.email github用户电子邮箱</span><br><span class="line"></span><br><span class="line">ssh -keygen -t rsa -C github用户电子邮箱</span><br><span class="line">公私钥默认放到.ssh文件下</span><br><span class="line">id_rsa放私钥，id_rsa.pub放公钥</span><br><span class="line">通过 cat id_rsa.pubc查看并复制公钥</span><br><span class="line">在github设置中找到ssh，添加新的公钥，并粘贴即可通信</span><br><span class="line"></span><br><span class="line">可通过ssh -T git@github.com验证是否成功</span><br></pre></td></tr></table></figure></li></ul>]]></content>
       
       
       <categories>
@@ -42,9 +42,34 @@
     
     
     <entry>
+      <title>Machine Learning</title>
+      <link href="/2025/04/07/Machine-Learning/"/>
+      <url>/2025/04/07/Machine-Learning/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是我的第四篇文章："><a href="#这是我的第四篇文章：" class="headerlink" title="这是我的第四篇文章："></a>这是我的第四篇文章：</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mysql</title>
-      <link href="/2025/04/07/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2025/04/07/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <link href="/2025/04/07/Mysql/"/>
+      <url>/2025/04/07/Mysql/</url>
       
         <content type="html"><![CDATA[<h2 id="这是我的第二篇文章："><a href="#这是我的第二篇文章：" class="headerlink" title="这是我的第二篇文章："></a>这是我的第二篇文章：</h2>]]></content>
       
@@ -84,31 +109,6 @@
         <tags>
             
             <tag> 基础语言学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Machine Learning</title>
-      <link href="/2025/04/07/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2025/04/07/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的第四篇文章："><a href="#这是我的第四篇文章：" class="headerlink" title="这是我的第四篇文章："></a>这是我的第四篇文章：</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> Basic </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 机器学习 </tag>
             
         </tags>
       
